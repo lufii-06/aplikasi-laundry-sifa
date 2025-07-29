@@ -45,8 +45,8 @@
                         </div>
                         <div class="col col-stats ms-3 ms-sm-0">
                             <div class="numbers">
-                                <p class="card-category">Paket yang tersedia</p>
-                                <h4 class="card-title"></h4>
+                                <p class="card-category">Jumlah Jenis Layanan Saat Ini</p>
+                                <h4 class="card-title"><?php echo $jmlJenisCucian ?></h4>
                             </div>
                         </div>
                     </div>
@@ -66,8 +66,8 @@
                         </div>
                         <div class="col col-stats ms-3 ms-sm-0">
                             <div class="numbers">
-                                <p class="card-category">Pesanan telah selesai</p>
-                                <h4 class="card-title"></h4>
+                                <p class="card-category">Total Semua Transaksi Saat Ini</p>
+                                <h4 class="card-title"><?php echo $jmlSemuaTransaksi ?></h4>
                             </div>
                         </div>
                     </div>
@@ -117,9 +117,9 @@
                             <th scope="row">
                                 Dari Pesanan #<?php echo $item->id ?>
                             </th>
-                            <td class="text-start"><?php echo $item->tanggal_masuk ?? "Belum diketahui" ?></td>
-                            <td class="text-start"><?php echo $item->tanggal_selesai ?? "Belum diketahui" ?></td>
-                            <td class="text-start"><?php echo $item->tanggal_ambil ?? "Belum diketahui" ?></td>
+                            <td class="text-start"><?php echo $item->tgl_masuk ?? "Belum diketahui" ?></td>
+                            <td class="text-start"><?php echo $item->tgl_selesai ?? "Belum diketahui" ?></td>
+                            <td class="text-start"><?php echo $item->tgl_ambil ?? "Belum diketahui" ?></td>
                             <td class="text-start"><?php echo $item->nama_pelanggan ?></td>
                             <td class="text-start"><?php echo $item->total ?? 0 ?></td>
                             <td class="text-start">

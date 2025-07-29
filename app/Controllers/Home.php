@@ -2,15 +2,23 @@
 namespace App\Controllers;
 
 use App\Models\CucianMasuk;
+use App\Models\JenisCucian;
 use App\Models\User;
 
 class Home extends BaseController
 {
     public function index(): string
     {
-        $model = new CucianMasuk();
+        $modelJenisCucian = new JenisCucian();
+        $model            = new CucianMasuk();
+        $jenisCucian      = $modelJenisCucian->select('jenis_cucians.*,jenis_layanans.nama_layanan')->join('jenis_layanans', 'jenis_layanans.id = jenis_cucians.id_layanan')->findAll();
+
         $datas = $model->getWithDetail();
-        return view('pages/index.php', ["datas" => $datas]);
+        return view('pages/index.php', [
+            "datas"             => $datas,
+            "jmlSemuaTransaksi" => count($datas),
+            "jmlJenisCucian"    => count($jenisCucian),
+        ]);
     }
 
     public function login()
