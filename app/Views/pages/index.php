@@ -37,7 +37,7 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-icon">
-                            <a href="/paket">
+                            <a href="/jenis-cucian">
                                 <div class="icon-big text-center icon-primary bubble-shadow-small">
                                     <i class="fas fa-folder-open"></i>
                                 </div>
@@ -58,7 +58,7 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col-icon">
-                            <a href="/pemesanan">
+                            <a href="/cucian-masuk">
                                 <div class="icon-big text-center icon-success bubble-shadow-small">
                                     <i class="fas fa-check-circle"></i>
                                 </div>
