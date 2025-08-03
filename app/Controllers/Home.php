@@ -25,7 +25,7 @@ class Home extends BaseController
     {
         $user = session()->get('user');
         if ($user) {
-            return redirect()->to('/');
+            return redirect()->to('/home');
         }
         return view('pages/auth/login.php');
     }
@@ -48,7 +48,7 @@ class Home extends BaseController
                 'user'       => $user,
                 'isLoggedIn' => true,
             ]);
-            return redirect()->to('/');
+            return redirect()->to('/home');
         } else {
             return redirect()->back()->with('error', 'Login gagal. Periksa kembali username dan password.');
         }

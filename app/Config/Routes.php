@@ -5,7 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+$routes->get('/', 'LandingPageController::index');
 $routes->get('/login', 'Home::login');
 // $routes->get('/register', 'Home::register');
 $routes->get('/logout', 'Home::logout');
@@ -15,6 +15,7 @@ $routes->post('/login', 'Home::loginAction');
 $routes->get('/unauthorized', 'Home::unauthorized');
 
 $routes->group('', ['filter' => 'role:ADMIN,KARYAWAN'], function ($routes) {
+    $routes->get('/home', 'Home::index');
     $routes->resource('pelanggan', ['controller' => 'PelangganController']);
     $routes->resource('jenis-cucian', ['controller' => 'JenisCucianController']);
     $routes->resource('jenis-layanan', ['controller' => 'JenisLayananController']);

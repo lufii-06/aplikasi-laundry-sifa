@@ -29,7 +29,7 @@
             <ul class="nav nav-secondary">
                 <li class="nav-item
                     <?php echo uri_string() === '' ? 'active' : '' ?>">
-                    <a href="/">
+                    <a href="/home">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
                     </a>

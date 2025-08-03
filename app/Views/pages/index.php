@@ -17,7 +17,6 @@
 <div class="">
     <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
         <div class="">
-            <p class="op-7 mb-2">Selamat Datang, Sistem Informasi Laundry</p>
         </div>
         <div
             class="ms-md-auto py-2 py-md-0
@@ -75,6 +74,22 @@
             </div>
         </div>
     </div>
+    <h3>Cek Estimasi Cucian</h3>
+    <form class=" row gap-5 mb-5" action="/cetak-laporan-transaksi-perid" method="post" target="_blank">
+        <div class="col-12 col-md-3">
+            <label for="id" class="form-label">ID Faktur</label>
+            <input type="text" class="form-control" id="id" name="id" placeholder="Masukkan ID Faktur">
+        </div>
+        <div class="col-12 col-md-3">
+            <label for="nohp" class="form-label">Nohp</label>
+            <input type="text" class="form-control" id="nohp" name="nohp" placeholder="Masukkan Nohp">
+        </div>
+
+        <div class="col-12 col-md-3">
+            <label for="" class="form-label">&nbsp;</label>
+            <button class="btn btn-info d-block" type="submit">Cek</button>
+        </div>
+    </form>
     <div
         class="card card-round
         <?php echo(session()->get('user')->level ?? '') === 'ADMIN' || (session()->get('user')->level ?? '') === 'PIMPINAN' ? '' : 'd-none' ?>">
@@ -162,22 +177,7 @@
         </div>
     </div>
 
-    <h3>Cek Estimasi Cucian</h3>
-    <form class=" row gap-5" action="/cetak-laporan-transaksi-perid" method="post" target="_blank">
-        <div class="col-12 col-md-3">
-            <label for="id" class="form-label">ID Faktur</label>
-            <input type="text" class="form-control" id="id" name="id" placeholder="Masukkan ID Faktur">
-        </div>
-        <div class="col-12 col-md-3">
-            <label for="nohp" class="form-label">Nohp</label>
-            <input type="text" class="form-control" id="nohp" name="nohp" placeholder="Masukkan Nohp">
-        </div>
 
-        <div class="col-12 col-md-3">
-            <label for="" class="form-label">&nbsp;</label>
-            <button class="btn btn-info d-block" type="submit">Cek</button>
-        </div>
-    </form>
 </div>
 
 <?php echo $this->endSection('content') ?>
