@@ -34,7 +34,10 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/demo.css">
     <style>
     body {
-        background: #1e293b;
+        background-image: url("<?php echo base_url() ?>/assets/img/login-background.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
         height: 100vh;
         display: flex;
         align-items: center;
@@ -75,7 +78,7 @@
     </style>
 </head>
 
-<body>
+<body bac>
     <div class="login-box">
         <form method="post" action="/login">
             <h4 class="text-white text-center mb-4">Login Laundry</h4>
