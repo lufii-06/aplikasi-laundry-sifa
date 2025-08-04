@@ -10,7 +10,7 @@
             <?php echo $this->include('layouts/header') ?>
 
             <!-- main content -->
-            <!-- style="width: 100%; height: 100%; background-image: url('<?php echo base_url() ?>/LandingPageAssets/assets/img/awan.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;" -->
+            <!-- style="width: 100%; height: 100%; background-image: url('<?php echo base_url() ?>LandingPageAssets/assets/img/awan.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;" -->
             <div class="container">
                 <div class="page-inner overflow-auto">
                     <?php echo $this->renderSection('content') ?>

@@ -9,8 +9,8 @@
     <meta name="keywords" content="">
 
     <!-- Favicons -->
-    <link href="<?php echo base_url() ?>/LandingPageAssets/assets/img/images.jpeg" rel="icon">
-    <link href="<?php echo base_url() ?>/LandingPageAssets/assets/img/images.jpeg" rel="apple-touch-icon">
+    <link href="<?php echo base_url() ?>LandingPageAssets/assets/img/images.jpeg" rel="icon">
+    <link href="<?php echo base_url() ?>LandingPageAssets/assets/img/images.jpeg" rel="apple-touch-icon">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -20,17 +20,17 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="<?php echo base_url() ?>/LandingPageAssets/assets/vendor/bootstrap/css/bootstrap.min.css"
+    <link href="<?php echo base_url() ?>LandingPageAssets/assets/vendor/bootstrap/css/bootstrap.min.css"
         rel="stylesheet">
-    <link href="<?php echo base_url() ?>/LandingPageAssets/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+    <link href="<?php echo base_url() ?>LandingPageAssets/assets/vendor/bootstrap-icons/bootstrap-icons.css"
         rel="stylesheet">
-    <link href="<?php echo base_url() ?>/LandingPageAssets/assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>/LandingPageAssets/assets/vendor/glightbox/css/glightbox.min.css"
+    <link href="<?php echo base_url() ?>LandingPageAssets/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>LandingPageAssets/assets/vendor/glightbox/css/glightbox.min.css"
         rel="stylesheet">
-    <link href="<?php echo base_url() ?>/LandingPageAssets/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>LandingPageAssets/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Main CSS File -->
-    <link href="<?php echo base_url() ?>/LandingPageAssets/assets/css/main.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>LandingPageAssets/assets/css/main.css" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: eNno
@@ -86,7 +86,7 @@
                             </div>
                     </div>
                     <div class="col-lg-6 order-1 order-lg-5 hero-img" data-aos="zoom-out" data-aos-delay="100">
-                        <img src="<?php echo base_url() ?>/LandingPageAssets/assets/img/bp1.jpeg"
+                        <img src="<?php echo base_url() ?>LandingPageAssets/assets/img/bp1.jpeg"
                             class="img-fluid animated" alt="">
                     </div>
                 </div>
@@ -103,7 +103,7 @@
 
                     <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="100">
                         <div class="service-item position-relative">
-                            <img src="<?php echo base_url() ?>/LandingPageAssets/assets/img/bp2.jpeg"
+                            <img src="<?php echo base_url() ?>LandingPageAssets/assets/img/bp2.jpeg"
                                 class="img-fluid animated" alt="">
                             <p>
                             <h4><a href="" class="stretched-link">SETRIKA</a></h4>
@@ -114,7 +114,7 @@
 
                     <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="100">
                         <div class="service-item position-relative">
-                            <img src="<?php echo base_url() ?>/LandingPageAssets/assets/img/bp3.png"
+                            <img src="<?php echo base_url() ?>LandingPageAssets/assets/img/bp3.png"
                                 class="img-fluid animated" alt="">
                             <h4><a href="" class="stretched-link">PAKAIAN</a></h4>
                             <p>Merawat setiap pakaian pelanggan dengan hati-hati, seolah milik sendiri, untuk menjaga
@@ -124,7 +124,7 @@
 
                     <div class="col-lg-4 d-flex" data-aos="fade-up" data-aos-delay="100">
                         <div class="service-item position-relative">
-                            <img src="<?php echo base_url() ?>/LandingPageAssets/assets/img/bp4.png"
+                            <img src="<?php echo base_url() ?>LandingPageAssets/assets/img/bp4.png"
                                 class="img-fluid animated" alt="">
                             <h4><a href="" class="stretched-link">CUCI</a></h4>
                             <p>Menjaga kebersihan dan kesegaran pakaian pelanggan melalui proses pencucian yang higienis
@@ -153,7 +153,7 @@
 
                 <div class="row gy-4">
                     <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
-                        <img src="<?php echo base_url() ?>/LandingPageAssets/assets/img/bp5.png" class="img-fluid"
+                        <img src="<?php echo base_url() ?>LandingPageAssets/assets/img/bp5.png" class="img-fluid"
                             alt="">
 
                     </div>
@@ -389,19 +389,19 @@
     <div id="preloader"></div>
 
     <!-- Vendor JS Files -->
-    <script src="<?php echo base_url() ?>/LandingPageAssets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js">
+    <script src="<?php echo base_url() ?>LandingPageAssets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js">
     </script>
-    <script src="<?php echo base_url() ?>/LandingPageAssets/assets/vendor/php-email-form/validate.js"></script>
-    <script src="<?php echo base_url() ?>/LandingPageAssets/assets/vendor/aos/aos.js"></script>
-    <script src="<?php echo base_url() ?>/LandingPageAssets/assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="<?php echo base_url() ?>/LandingPageAssets/assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="<?php echo base_url() ?>/LandingPageAssets/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js">
+    <script src="<?php echo base_url() ?>LandingPageAssets/assets/vendor/php-email-form/validate.js"></script>
+    <script src="<?php echo base_url() ?>LandingPageAssets/assets/vendor/aos/aos.js"></script>
+    <script src="<?php echo base_url() ?>LandingPageAssets/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="<?php echo base_url() ?>LandingPageAssets/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="<?php echo base_url() ?>LandingPageAssets/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js">
     </script>
-    <script src="<?php echo base_url() ?>/LandingPageAssets/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="<?php echo base_url() ?>/LandingPageAssets/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="<?php echo base_url() ?>LandingPageAssets/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="<?php echo base_url() ?>LandingPageAssets/assets/vendor/swiper/swiper-bundle.min.js"></script>
 
     <!-- Main JS File -->
-    <script src="<?php echo base_url() ?>/LandingPageAssets/assets/js/main.js"></script>
+    <script src="<?php echo base_url() ?>LandingPageAssets/assets/js/main.js"></script>
 
 </body>
 

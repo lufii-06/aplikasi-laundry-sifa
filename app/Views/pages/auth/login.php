@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Dita Laoundry || Login</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="<?php echo base_url() ?>/assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="<?php echo base_url() ?>assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
 
     <!-- Fonts and icons -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
@@ -26,15 +26,15 @@
     });
     </script>
     <!-- CSS Files -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/plugins.min.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/kaiadmin.min.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/plugins.min.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/kaiadmin.min.css">
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link rel="stylesheet" href="<?php echo base_url() ?>/assets/css/demo.css">
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/demo.css">
     <style>
     body {
-        background-image: url("<?php echo base_url() ?>/assets/img/login-background.webp");
+        background-image: url("<?php echo base_url() ?>assets/img/login-background.webp");
         background-repeat: no-repeat;
         background-size: cover;
         width: 100%;
@@ -107,48 +107,48 @@
                     <input type="checkbox" class="form-check-input" id="remember">
                     <label class="form-check-label text-white" for="remember">Ingat saya</label>
                 </div>
-                <!-- <a href="/register" class="forgot-password">Belum punya akun?</a> -->
+                <a href="/" class="forgot-password">Halaman Utama</a>
             </div>
             <button type="submit" class="btn btn-login w-100">Masuk</button>
         </form>
     </div>
 
-    <script src="<?php echo base_url() ?>/assets/js/core/jquery-3.7.1.min.js"></script>
-    <script src="<?php echo base_url() ?>/assets/js/core/popper.min.js"></script>
-    <script src="<?php echo base_url() ?>/assets/js/core/bootstrap.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/core/popper.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/core/bootstrap.min.js"></script>
 
     <!-- jQuery Scrollbar -->
-    <script src="<?php echo base_url() ?>/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
     <!-- Moment JS -->
-    <script src="<?php echo base_url() ?>/assets/js/plugin/moment/moment.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/plugin/moment/moment.min.js"></script>
 
     <!-- Chart JS -->
-    <script src="<?php echo base_url() ?>/assets/js/plugin/chart.js/chart.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/plugin/chart.js/chart.min.js"></script>
 
     <!-- jQuery Sparkline -->
-    <script src="<?php echo base_url() ?>/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
 
     <!-- Chart Circle -->
-    <script src="<?php echo base_url() ?>/assets/js/plugin/chart-circle/circles.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/plugin/chart-circle/circles.min.js"></script>
 
     <!-- Datatables -->
-    <script src="<?php echo base_url() ?>/assets/js/plugin/datatables/datatables.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/plugin/datatables/datatables.min.js"></script>
 
     <!-- Bootstrap Notify -->
-    <script src="<?php echo base_url() ?>/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
 
     <!-- jQuery Vector Maps -->
-    <script src="<?php echo base_url() ?>/assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
-    <script src="<?php echo base_url() ?>/assets/js/plugin/jsvectormap/world.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/plugin/jsvectormap/world.js"></script>
 
     <!-- Sweet Alert -->
-    <script src="<?php echo base_url() ?>/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/plugin/sweetalert/sweetalert.min.js"></script>
 
     <!-- Kaiadmin JS -->
-    <script src="<?php echo base_url() ?>/assets/js/kaiadmin.min.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/kaiadmin.min.js"></script>
 
     <!-- Kaiadmin DEMO methods, don't include it in your project! -->
-    <script src="<?php echo base_url() ?>/assets/js/setting-demo2.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/setting-demo2.js"></script>
     <?php if (session()->getFlashdata('error')): ?>
     <script>
     swal({

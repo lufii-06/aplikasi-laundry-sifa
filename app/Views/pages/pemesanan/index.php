@@ -99,8 +99,8 @@
                                     <td>
                                         <div class="form-button-action">
                                             <?php $status = session()->get('user')->status; ?>
-                                            <?php if (empty($data->nama_karyawan)): ?>
-                                            <?php if ($status === 'ADMIN' && $data->status !== "SELESAI"): ?>
+<?php if (empty($data->nama_karyawan)): ?>
+<?php if ($status === 'ADMIN' && $data->status !== "SELESAI"): ?>
                                             <button type="button"
                                                 class="btn btn-warning btn-sm open-set-karyawan-modal text-nowrap"
                                                 data-bs-toggle="modal" data-bs-target="#setKaryawanModal"
@@ -119,7 +119,7 @@
                                                 Fotografer Belum Di Tugaskan
                                             </button>
                                             <?php endif; ?>
-                                            <?php elseif ($data->status !== "SELESAI"): ?>
+<?php elseif ($data->status !== "SELESAI"): ?>
                                             <button type="button" class="btn btn-success btn-sm text-nowrap">
                                                 Fotografer <span
                                                     class="text-decoration-underline"><?php echo $data->nama_karyawan ?></span>
@@ -146,7 +146,7 @@
                                                 <i class="fa fa-edit"></i>
                                             </button>
                                             <?php endif; ?>
-                                            <?php if ($data->status == "BELUM BAYAR"): ?>
+<?php if ($data->status == "BELUM BAYAR"): ?>
                                             <button type="button" data-id="<?php echo $data->id ?>"
                                                 class="btn btn-link btn-danger alert-delete"
                                                 data-original-title="Remove">
@@ -201,10 +201,10 @@
                                         $selected = 'selected';
                                     }
                                 ?>
-                            <option value="<?php echo $pelanggan->id ?>" <?php echo $selected; ?>>
-                                <?php echo $pelanggan->detail_name ?> -<?php echo $pelanggan->nohp ?>
-                            </option>
-                            <?php endforeach; ?>
+	                            <option value="<?php echo $pelanggan->id ?>"<?php echo $selected; ?>>
+	                                <?php echo $pelanggan->detail_name ?> -<?php echo $pelanggan->nohp ?>
+	                            </option>
+	                            <?php endforeach; ?>
                         </select>
                         <?php if (session('errors.user_id')): ?>
                         <div class="invalid-feedback">
@@ -511,7 +511,7 @@
     <input type="hidden" name="id" id="pemesananId">
 </form>
 
-<script src="<?php echo base_url() ?>/assets/js/core/jquery-3.7.1.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/core/jquery-3.7.1.min.js"></script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">

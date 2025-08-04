@@ -504,7 +504,7 @@
     <input type="hidden" name="status" id="updateStatus">
 </form>
 
-<script src="<?php echo base_url() ?>/assets/js/core/jquery-3.7.1.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/core/jquery-3.7.1.min.js"></script>
 
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"

@@ -246,7 +246,7 @@
     <input type="hidden" name="id" id="deleteId">
 </form>
 
-<script src="<?php echo base_url() ?>/assets/js/core/jquery-3.7.1.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/core/jquery-3.7.1.min.js"></script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">

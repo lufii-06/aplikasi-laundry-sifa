@@ -249,7 +249,7 @@
     <input type="hidden" name="id" id="deleteId">
 </form>
 
-<script src="<?php echo base_url() ?>/assets/js/core/jquery-3.7.1.min.js"></script>
+<script src="<?php echo base_url() ?>assets/js/core/jquery-3.7.1.min.js"></script>
 <script>
 $(document).ready(function() {
     // js untuk delete data

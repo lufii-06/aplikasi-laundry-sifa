@@ -26,7 +26,7 @@
                  <li class="nav-item topbar-user dropdown hidden-caret">
                      <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
                          <div class="avatar-sm">
-                             <img src="<?php echo base_url() ?>/assets/img/user-default.jpg" alt="..."
+                             <img src="<?php echo base_url() ?>assets/img/user-default.jpg" alt="..."
                                  class="avatar-img rounded-circle">
                          </div>
                          <span class="profile-username">
@@ -39,7 +39,7 @@
                              <li class="<?php echo session()->get('isLoggedIn') ? '' : 'd-none' ?>">
                                  <div class="user-box">
                                      <div class="avatar-lg"><img
-                                             src="<?php echo base_url() ?>/assets/img/user-default.jpg"
+                                             src="<?php echo base_url() ?>assets/img/user-default.jpg"
                                              alt="image profile" class="avatar-img rounded"></div>
                                      <div class="u-text">
                                          <h4 class="">

@@ -15,7 +15,6 @@ $routes->post('/login', 'Home::loginAction');
 $routes->get('/unauthorized', 'Home::unauthorized');
 
 $routes->group('', ['filter' => 'role:ADMIN,KARYAWAN'], function ($routes) {
-    $routes->get('/home', 'Home::index');
     $routes->resource('pelanggan', ['controller' => 'PelangganController']);
     $routes->resource('jenis-cucian', ['controller' => 'JenisCucianController']);
     $routes->resource('jenis-layanan', ['controller' => 'JenisLayananController']);
@@ -26,6 +25,7 @@ $routes->group('', ['filter' => 'role:ADMIN,KARYAWAN'], function ($routes) {
 
 $routes->group('', ['filter' => 'role:ADMIN,KARYAWAN,PIMPINAN'], function ($routes) {
 
+    $routes->get('/home', 'Home::index');
     $routes->get('/laporan-pelanggan', 'PelangganController::laporan');
     $routes->post('/cetak-laporan-pelanggan', 'PelangganController::cetakLaporan');
 
