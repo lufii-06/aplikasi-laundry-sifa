@@ -34,10 +34,16 @@
                     </div>
                     <form action="/cetak-laporan-transaksi-pertanggal" method="post" target="_blank">
                         <p class="mb-2 d-block">Cetak Laporan Transaksi Pertanggal</p>
-                        <label for="tanggal">Tanggal </label>
-                        <input type="date" name="tanggal" id="tanggal" class="form-control" required
-                            placeholder="Tanggal">
-
+                        <div class="mb-3">
+                            <label for="tgl_awal">Tanggal Awal</label>
+                            <input type="date" name="tgl_awal" id="tgl_awal" class="form-control" required
+                                placeholder="Tanggal">
+                        </div>
+                        <div class="mb-3">
+                            <label for="tgl_akhir">Tanggal Akhir</label>
+                            <input type="date" name="tgl_akhir" id="tgl_akhir" class="form-control" required
+                                placeholder="Tanggal">
+                        </div>
                         <button type="submit" class="btn btn-info btn-sm mt-2">
                             <i class="fas fa-print"></i> Cetak
                         </button>

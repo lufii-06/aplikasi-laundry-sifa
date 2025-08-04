@@ -101,7 +101,7 @@ class CucianMasuk extends Model
             ->where('jenis_cucians.satuan', $satuan)
             ->findAll();
     }
-    public function getTransaksiPertanggal($tanggal)
+    public function getTransaksiPertanggal($tgl_awal, $tgl_akhir)
     {
         return $this->select('cucian_masuks.*,
             pelanggans.nama AS nama_pelanggan,
@@ -113,7 +113,9 @@ class CucianMasuk extends Model
             ->join('jenis_layanans', 'jenis_layanans.id = jenis_cucians.id_layanan')
             ->orderBy('cucian_masuks.created_at', 'DESC')
             ->where('cucian_masuks.status', "SUDAH DI AMBIL")
-            ->where('cucian_masuks.tgl_ambil', $tanggal)
+            ->where('cucian_masuks.tgl_ambil >=', $tgl_awal)
+            ->where('cucian_masuks.tgl_ambil <=', $tgl_akhir)
+            ->orderBy('cucian_masuks.created_at', 'DESC')
             ->findAll();
     }
     public function getTransaksiPerbulan($bulan)

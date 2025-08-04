@@ -201,7 +201,7 @@
                             <div class="icon">
                                 <i class="bi-bag-check" style="font-size: 32px;"></i>
                             </div>
-                            <a href="service-details.html" class="stretched-link">
+                            <a class="stretched-link">
                                 <h3><?php echo $data->nama_cucian ?></h3>
                             </a>
                             <p><?php echo $data->nama_layanan ?>

@@ -264,12 +264,14 @@ class CucianMasukController extends ResourceController
 
     public function cetakLaporanPertanggal()
     {
-        $tanggal = $this->request->getPost('tanggal');
-        $model   = new CucianMasuk();
-        $datas   = $model->getTransaksiPertanggal($tanggal);
+        $tgl_awal  = $this->request->getPost('tgl_awal');
+        $tgl_akhir = $this->request->getPost('tgl_akhir');
+        $model     = new CucianMasuk();
+        $datas     = $model->getTransaksiPertanggal($tgl_awal, $tgl_akhir);
         return view('pages/laporan/print/cetak-laporan-transaksi-pertanggal.php', [
-            "datas"   => $datas,
-            "tanggal" => $tanggal,
+            "datas"     => $datas,
+            "tgl_awal"  => $tgl_awal,
+            "tgl_akhir" => $tgl_akhir,
         ]);
     }
     public function cetakLaporanPerbulan()

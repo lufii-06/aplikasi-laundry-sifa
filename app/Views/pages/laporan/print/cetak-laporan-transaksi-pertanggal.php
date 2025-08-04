@@ -30,7 +30,7 @@
         <p class="text-center">JLN, MALINTANG NO.68 CUPAK TENGAH, KEC, PAUH <br> KOTA PADANG,SUMATERA BARAT</p>
         <hr>
         <h5 class="text-center">Laporan Transaksi Pertanggal</h5>
-        <p>Tanggal : <?php echo $tanggal ?></p>
+        <p>Tanggal : <?php echo $tgl_awal . " s/d " . $tgl_akhir ?></p>
         <div>
             <table class="table table-bordered table-hover table-striped bg-transparent w-100">
                 <thead>
@@ -62,7 +62,7 @@ $jmlTotal                     = 0;foreach ($datas as $d): ?>
                     <?php $jmlTotal += $d->total;endforeach?>
                     <tr>
                         <td colspan="7">Total Seluruhnya</td>
-                        <td><?php echo $jmlTotal?></td>
+                        <td><?php echo $jmlTotal ?></td>
                     </tr>
                     <?php else: ?>
                     <tr>
