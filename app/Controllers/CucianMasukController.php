@@ -59,13 +59,20 @@ class CucianMasukController extends ResourceController
      */
     public function create()
     {
+
+        $idCucians = explode('-', $this->request->getPost("id_cucian"));
+        $qtys = $this->request->getPost('qty');
+        $qtyMap = [];
+        foreach ($idCucians as $i => $id) {
+            $qtyMap[$id] = $qtys[$i] ?? 0; 
+        }
+        $qtysJson = json_encode($qtyMap);
         $validation = Services::validation();
         $rules      = [
             'id_pelanggan' => 'required|numeric',
             'id_cucian'    => 'required',
             'tgl_masuk'    => 'required|valid_date',
-            'qty'          => 'required|numeric|min_length[1]',
-            'harga'        => 'required|numeric',
+            'qty'          => 'required',
             'total'        => 'required|numeric',
             'status'       => 'required|min_length[3]',
         ];
@@ -80,15 +87,14 @@ class CucianMasukController extends ResourceController
         $model->insert([
             'id_user'      => session()->get('user')->id ?? 1,
             'id_pelanggan' => $this->request->getPost('id_pelanggan'),
-            'id_cucian'    => $this->request->getPost('id_cucian'),
+            'id_cucian'    => $this->request->getPost("id_cucian"),
             'tgl_masuk'    => $this->request->getPost('tgl_masuk'),
             'tgl_selesai'  => null,
             'tgl_ambil'    => null,
-            'qty'          => $this->request->getPost('qty'),
+            'qty'          => $qtysJson,
             'total'        => $this->request->getPost('total'),
             'status'       => $this->request->getPost('status'),
         ]);
-
         return redirect()->to('/cucian-masuk')->with('success', 'Data Cucian Masuk berhasil ditambahkan.');
     }
 
@@ -113,18 +119,31 @@ class CucianMasukController extends ResourceController
      */
     public function update($id = null)
     {
+        $idCucians = explode('-', $this->request->getPost("id_cucianUpdate"));
+
+        if (empty($idCucians)) {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', 'Pilih jenis cucian dahulu!');
+        }
+
+        $qtys = $this->request->getPost('qty');
+        $qtyMap = [];
+        foreach ($idCucians as $i => $value) {
+            $qtyMap[$value] = $qtys[$i] ?? 0; 
+        }
+        $qtysJson = json_encode($qtyMap);
         $validation = Services::validation();
         $rules      = [
             'id_pelanggan' => 'required|numeric',
-            'id_cucian'    => 'required',
             'tgl_masuk'    => 'required|valid_date',
-            'qty'          => 'required|numeric|min_length[1]',
-            'harga'        => 'required|numeric',
+            'qty'          => 'required',
             'total'        => 'required|numeric',
             'status'       => 'required|min_length[3]',
         ];
 
         if (! $this->validate($rules)) {
+            dd($validation->getErrors());
             return redirect()->back()
                 ->withInput()
                 ->with('errors', $validation->getErrors())
@@ -134,11 +153,11 @@ class CucianMasukController extends ResourceController
         $model->update($id, [
             'id_user'      => session()->get('user')->id ?? 1,
             'id_pelanggan' => $this->request->getPost('id_pelanggan'),
-            'id_cucian'    => $this->request->getPost('id_cucian'),
+            'id_cucian'    => $this->request->getPost("id_cucianUpdate"),
             'tgl_masuk'    => $this->request->getPost('tgl_masuk'),
             'tgl_selesai'  => null,
             'tgl_ambil'    => null,
-            'qty'          => $this->request->getPost('qty'),
+            'qty'          => $qtysJson,
             'total'        => $this->request->getPost('total'),
             'status'       => $this->request->getPost('status'),
         ]);
@@ -324,5 +343,19 @@ class CucianMasukController extends ResourceController
             "datas"  => $datas,
             "satuan" => $satuan,
         ]);
+    }
+
+    public function getByIds($ids)
+    {
+        $modelJenisCucian = new JenisCucian();
+        $idArray = explode('-', $ids);
+
+        $layanans = $modelJenisCucian
+        ->select('jenis_cucians.*, jenis_layanans.nama_layanan')
+        ->join('jenis_layanans', 'jenis_layanans.id = jenis_cucians.id_layanan')
+        ->whereIn('jenis_cucians.id', $idArray)
+        ->findAll();
+
+        return $this->response->setJSON($layanans);
     }
 }

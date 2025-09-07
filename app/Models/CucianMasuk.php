@@ -55,10 +55,8 @@ class CucianMasuk extends Model
 
     public function getWithDetail()
     {
-        return $this->select('cucian_masuks.*, pelanggans.nama AS nama_pelanggan, jenis_cucians.nama_cucian AS nama_cucian')
+        return $this->select('cucian_masuks.*, pelanggans.nama AS nama_pelanggan')
             ->join('pelanggans', 'pelanggans.id = cucian_masuks.id_pelanggan')
-            ->join('jenis_cucians', 'jenis_cucians.id = cucian_masuks.id_cucian')
-            ->join('jenis_layanans', 'jenis_layanans.id = jenis_cucians.id_layanan')
             ->orderBy('cucian_masuks.created_at', 'DESC')
             ->findAll();
     }
@@ -104,13 +102,8 @@ class CucianMasuk extends Model
     public function getTransaksiPertanggal($tgl_awal, $tgl_akhir)
     {
         return $this->select('cucian_masuks.*,
-            pelanggans.nama AS nama_pelanggan,
-            jenis_cucians.nama_cucian AS nama_cucian,
-            jenis_cucians.harga AS harga,
-            jenis_layanans.nama_layanan AS nama_layanan')
+            pelanggans.nama AS nama_pelanggan')
             ->join('pelanggans', 'pelanggans.id = cucian_masuks.id_pelanggan')
-            ->join('jenis_cucians', 'jenis_cucians.id = cucian_masuks.id_cucian')
-            ->join('jenis_layanans', 'jenis_layanans.id = jenis_cucians.id_layanan')
             ->orderBy('cucian_masuks.created_at', 'DESC')
             ->where('cucian_masuks.status', "SUDAH DI AMBIL")
             ->where('cucian_masuks.tgl_ambil >=', $tgl_awal)

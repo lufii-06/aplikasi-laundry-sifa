@@ -59,3 +59,5 @@ $routes->group('', ['filter' => 'role:ADMIN,KARYAWAN,PIMPINAN'], function ($rout
 });
 
 $routes->post('/cetak-laporan-transaksi-perid', 'CucianMasukController::cetakLaporanPerId');
+
+$routes->get('/jenis_cucian/(:segment)', 'CucianMasukController::getByIds/$1');

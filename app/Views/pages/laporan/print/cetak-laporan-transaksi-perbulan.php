@@ -29,7 +29,7 @@
         <h5 class="text-center">DITA LAUNDRY</h5>
         <p class="text-center">JLN, MALINTANG NO.68 CUPAK TENGAH, KEC, PAUH <br> KOTA PADANG,SUMATERA BARAT</p>
         <hr>
-        <h5 class="text-center">Laporan Transaksi Pertanggal</h5>
+        <h5 class="text-center">Laporan Transaksi Perbulan</h5>
         <p>Bulan : <?php echo $bulan ?></p>
         <div>
             <table class="table table-bordered table-hover table-striped bg-transparent w-100">
@@ -39,8 +39,6 @@
                         <th>No Faktur</th>
                         <th>Nama Pelanggan</th>
                         <th>Tanggal Ambil</th>
-                        <th>Harga</th>
-                        <th>qty</th>
                         <th>total</th>
                     </tr>
                 </thead>
@@ -53,18 +51,16 @@ $jmlTotal                     = 0;foreach ($datas as $d): ?>
                         <td><?php echo esc("#" . $d->id) ?></td>
                         <td><?php echo esc($d->nama_pelanggan) ?></td>
                         <td><?php echo esc($d->tgl_ambil) ?></td>
-                        <td><?php echo esc($d->harga) ?></td>
-                        <td><?php echo esc($d->qty) ?></td>
                         <td><?php echo esc($d->total) ?></td>
                     </tr>
                     <?php $jmlTotal += $d->total;endforeach?>
                     <tr>
-                        <td colspan="6">Total Seluruhnya</td>
+                        <td colspan="4">Total Seluruhnya</td>
                         <td><?php echo $jmlTotal ?></td>
                     </tr>
                     <?php else: ?>
                     <tr>
-                        <td colspan="7" class="text-center">Tidak ada data</td>
+                        <td colspan="5" class="text-center">Tidak ada data</td>
                     </tr>
                     <?php endif; ?>
                 </tbody>

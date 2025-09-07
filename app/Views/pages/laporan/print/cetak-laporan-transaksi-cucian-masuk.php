@@ -41,7 +41,6 @@
                         <th>Tanggal Masuk</th>
                         <th>Jenis Cucian</th>
                         <th>Jenis Layanan</th>
-                        <th>qty</th>
                         <th>Harga</th>
                         <th>total</th>
                     </tr>
@@ -57,18 +56,17 @@ $jmlTotal                     = 0;foreach ($datas as $d): ?>
                         <td><?php echo esc($d->tgl_masuk) ?></td>
                         <td><?php echo esc($d->nama_cucian) ?></td>
                         <td><?php echo esc($d->nama_layanan) ?></td>
-                        <td><?php echo esc($d->qty) ?></td>
                         <td><?php echo esc($d->harga) ?></td>
                         <td><?php echo esc($d->total) ?></td>
                     </tr>
                     <?php $jmlTotal += $d->total;endforeach?>
                     <tr>
-                        <td colspan="8">Total Seluruhnya</td>
+                        <td colspan="7">Total Seluruhnya</td>
                         <td><?php echo $jmlTotal ?></td>
                     </tr>
                     <?php else: ?>
                     <tr>
-                        <td colspan="7" class="text-center">Tidak ada data</td>
+                        <td colspan="8" class="text-center">Tidak ada data</td>
                     </tr>
                     <?php endif; ?>
                 </tbody>

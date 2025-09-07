@@ -22,8 +22,8 @@ class CucianMasuk extends Migration
                 'unsigned' => true,
             ],
             'id_cucian'    => [
-                'type'     => 'INT',
-                'unsigned' => true,
+                'type'     => 'VARCHAR',
+                 'constraint' => 255,
             ],
             'tgl_masuk'    => [
                 'type' => 'DATE',
@@ -37,8 +37,8 @@ class CucianMasuk extends Migration
                 'null' => true,
             ],
             'qty'          => [
-                'type'     => 'INT',
-                'unsigned' => true,
+                'type'     => 'VARCHAR',
+                'constraint' => 255,
             ],
             'total'        => [
                 'type' => 'DOUBLE',
@@ -61,7 +61,6 @@ class CucianMasuk extends Migration
         $this->forge->addKey('id', true);
         $this->forge->addForeignKey('id_user', 'users', 'id', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('id_pelanggan', 'pelanggans', 'id', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('id_cucian', 'jenis_cucians', 'id', 'CASCADE', 'CASCADE');
         $this->forge->createTable('cucian_masuks');
     }
 

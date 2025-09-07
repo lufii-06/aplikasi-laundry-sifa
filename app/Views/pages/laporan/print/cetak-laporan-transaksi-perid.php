@@ -23,7 +23,6 @@
     }
 }
 </style>
-
 <body>
     <div class="container-fluid py-5">
         <h5 class="text-center">DITA LAUNDRY</h5>
@@ -42,37 +41,53 @@
                         <th>Tanggal Selesai</th>
                         <th>Tanggal Ambil</th>
                         <th>Status</th>
-                        <th>Jenis Cucian</th>
-                        <th>qty</th>
-                        <th>total</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php if (! empty($datas)): ?>
-                    <?php $jmlTotal = 0;
-    foreach ($datas as $d):
-?>
-                    <tr>
-                        <td><?php echo esc("#" . $d->id) ?></td>
-                        <td><?php echo esc($d->nama_pelanggan) ?></td>
-                        <td><?php echo esc($d->nohp) ?></td>
-                        <td><?php echo esc($d->alamat) ?></td>
-                        <td><?php echo esc($d->tgl_masuk ?? "Belum Ada") ?></td>
-                        <td><?php echo esc($d->tgl_selesai ?? "Belum Ada") ?></td>
-                        <td><?php echo esc($d->tgl_ambil ?? "Belum Ada") ?></td>
-                        <td><?php echo esc($d->status) ?></td>
-                        <td><?php echo esc($d->nama_cucian) ?></td>
-                        <td><?php echo esc($d->qty) ?></td>
-                        <td><?php echo esc($d->total) ?></td>
-                    </tr>
-                    <?php $jmlTotal += $d->total;endforeach?>
+                    <?php if (!empty($datas)): ?>
+                        <?php foreach ($datas as $d): ?>
+                            <!-- row utama faktur -->
+                            <tr class="main-row" 
+                                data-id-cucian="<?= $d->id_cucian ?>" 
+                                data-qty="<?= htmlspecialchars($d->qty, ENT_QUOTES, 'UTF-8') ?>">
+                                <td><?= esc("#".$d->id) ?></td>
+                                <td><?= esc($d->nama_pelanggan) ?></td>
+                                <td><?= esc($d->nohp) ?></td>
+                                <td><?= esc($d->alamat) ?></td>
+                                <td><?= esc($d->tgl_masuk ?? "Belum Ada") ?></td>
+                                <td><?= esc($d->tgl_selesai ?? "Belum Ada") ?></td>
+                                <td><?= esc($d->tgl_ambil ?? "Belum Ada") ?></td>
+                                <td><?= esc($d->status) ?></td>
+                            </tr>
+
+                            <!-- row header jenis cucian -->
+                            <tr class="jenis-cucian-header">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><b>Jenis Cucian</b></td>
+                                <td><b>Harga</b></td>
+                                <td><b>Qty</b></td>
+                                <td><b>Subtotal</b></td>
+                            </tr>
+
+                            <!-- placeholder untuk sub-items -->
+                            <tr class="jenis-cucian-row">
+                                <td colspan="9" class="sub-items">Loading...</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"></td>
+                                <td colspan="3">Total</td>
+                                <td><?= $d->total ?></td>
+                            </tr>
+                        <?php endforeach; ?>
                     <?php else: ?>
-                    <tr>
-                        <td colspan="10" class="text-center">Tidak ada data</td>
-                    </tr>
+                        <tr>
+                            <td colspan="9" class="text-center">Tidak ada data</td>
+                        </tr>
                     <?php endif; ?>
                 </tbody>
-
             </table>
         </div>
         <hr>
@@ -81,9 +96,61 @@
         <p class="text-end">Pimpinan</p>
     </div>
     <script>
-    window.onload = function() {
-        window.print();
-    };
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('.main-row').forEach(row => {
+                const idCucian = row.getAttribute('data-id-cucian');
+                const qtyData = JSON.parse(row.getAttribute('data-qty') || '{}');
+                for (const id in qtyData) qtyData[id] = Number(qtyData[id]);
+
+                const headerRow = row.nextElementSibling;
+                const subRow = headerRow.nextElementSibling;
+                const subItemsTd = subRow.querySelector('.sub-items');
+
+                fetch(`/jenis_cucian/${idCucian}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (!data.length) {
+                            subItemsTd.textContent = 'Tidak ada data';
+                            return;
+                        }
+
+                        // kosongkan placeholder
+                        subItemsTd.textContent = '';
+
+                        // tambahkan baris jenis cucian
+                        data.forEach(item => {
+                            const qty = qtyData[item.id_layanan] || 0;
+                            const subtotal = qty * item.harga;
+
+                            const tr = document.createElement('tr');
+                            tr.innerHTML = `
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>${item.nama_cucian}</td>
+                                <td>${item.harga}</td>
+                                <td>${qty}</td>
+                                <td>${subtotal}</td>
+                            `;
+                            subRow.parentNode.insertBefore(tr, subRow);
+                        });
+
+                        // hapus row placeholder
+                        subRow.remove();
+                    })
+                    .catch(err => {
+                        subItemsTd.textContent = 'Error loading data';
+                        console.error(err);
+                    });
+            });
+
+            // auto print
+            window.onload = function() {
+                window.print();
+            };
+        });
+
     </script>
 
     <?php echo $this->include('layouts/js') ?>
