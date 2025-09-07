@@ -524,7 +524,7 @@ $(document).ready(function() {
                         <div class="mb-3">
                             <label class="form-label">Qty</label>
                             <input type="number" class="form-control qty-input"
-                                name="qty[]" min="1" value="1"
+                                name="qty[]" min="1" value="1" step="0.01"
                                 data-index="${index}" data-harga="${item.harga}">
                         </div>
                     </div>
@@ -610,7 +610,7 @@ $(document).ready(function() {
                         <div class="mb-3">
                             <label class="form-label">Qty</label>
                             <input type="number" class="form-control qty-input-update" required
-                                name="qty[]" min="1" value="${itemQty}"
+                                name="qty[]" min="1" value="${itemQty}" step="0.01"
                                 data-index="${index}" data-harga="${item.harga}">
                         </div>
                     </div>
